@@ -59,6 +59,25 @@ public class StreamService {
 
         return kStreamIn;
     }
+    
+    //@Bean
+    //public KStream<String, String> kStreamConsumeFromTwoTopics(StreamsBuilder builder) {
+    //    var topic4Stream = builder.stream(topic4, Consumed.with(Serdes.String(), Serdes.String()));
+    //    var topic5Stream = builder.stream(topic5, Consumed.with(Serdes.String(), Serdes.String()));
+    //    var merged = topic4Stream.merge(topic5Stream);
+//
+//        merged.foreach((k, v) -> log.info("Merged received key [{}] with value [{}]. ", k, v));
+//
+//        var processed = merged
+//                .filter((k, v) -> Objects.nonNull(v) && v.contains(":"))
+//                .map((KeyValueMapper<String, String, KeyValue<String, String>>) (k, v) -> new KeyValue<>(v.split(":")[0]
+//                        , v.split(":")[1]));
+//
+//        processed.foreach((k, v) -> log.info("Words count [{}] - [{}]", k, v));
+//
+//        return merged;
+//    }
+
 
 
     public static Serde<Order> getOrderDeserializer() {
